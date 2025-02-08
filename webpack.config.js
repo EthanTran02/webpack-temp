@@ -23,9 +23,11 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: "./dist", // Serve files from 'dist'
-    port: 9000, // Local dev server port
-    open: true, // Opens browser automatically
-    hot: true, // Enables Hot Module Replacement (HMR)
+    static: {
+      directory: path.join(__dirname, 'src'), // Adjust this to your HTML file's directory
+      watch: true,
+    },
+    hot: true,
+    liveReload: true,
   },
 };
